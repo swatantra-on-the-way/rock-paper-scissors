@@ -48,6 +48,8 @@ function playGame(){
         tmp2 = getComputerChoice();
         playRound(tmp1, tmp2);
     }
+
+    console.log("\n");
     if (humanScore === computerScore){
         console.log("It's a tie");
     }
