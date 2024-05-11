@@ -58,7 +58,8 @@ function playRound(humanChoice, computerChoice){
         let final_msg = document.createElement("div");
         let reset_button = document.createElement("button");
 
-        start = false;
+        humanScore = 0;
+        computerScore = 0;
 
         final_msg.style.marginLeft = "20px";
         final_msg.style.marginTop = "10px";
@@ -74,22 +75,28 @@ function playRound(humanChoice, computerChoice){
         else {
             final_msg.innerText = "Sorry, but you lost the game. Better Try Next Time.";
         }
-        
+
         document.body.appendChild(final_msg);
         document.body.appendChild(reset_button);
+        
+        rock_button.disabled = true;
+        paper_button.disabled = true;
+        scissor_button.disabled = true;
 
         reset_button.addEventListener('click', (e) => {
-            humanScore = 0;
-            computerScore = 0;
 
-            comp_score.innerText = "0";
-            human_score.innerText = "0";
+            comp_score.innerText = `${computerScore}`;
+            human_score.innerText = `${humanScore}`;
         
             document.body.removeChild(final_msg);
             document.body.removeChild(reset_button);
             result_box.innerText = "";
+            rock_button.disabled = false;
+            paper_button.disabled = false;
+            scissor_button.disabled = false;
 
         });
+
     }
         
 }
