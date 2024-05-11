@@ -54,7 +54,7 @@ function playRound(humanChoice, computerChoice){
     comp_score.innerText = `${computerScore}`;
     human_score.innerText = `${humanScore}`;
 
-    if (humanScore >= 5 || computerScore >= 5) {
+    if (humanScore == 5 || computerScore == 5) {
         let final_msg = document.createElement("div");
         let reset_button = document.createElement("button");
 
